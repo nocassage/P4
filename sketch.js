@@ -37,5 +37,5 @@ function draw() {
   stroke(0, 0, vgs);
   rotateY(millis() / 4000);
   strokeWeight(0.3);
-  ellipsoid(height/3, height/3, height/3);
+  ellipsoid(height/4, height/4, height/4);
 }
