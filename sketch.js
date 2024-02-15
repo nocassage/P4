@@ -18,7 +18,7 @@ function gotPose(results) {
 }
 
 function setup() {
-  createCanvas(400, 500, WEBGL);
+  createCanvas(windowWidth, windowHeight, WEBGL);
   video = createCapture(VIDEO);
   video.hide();
   handpose = ml5.handpose(video, modelReady);
@@ -37,5 +37,5 @@ function draw() {
   stroke(0, 0, vgs);
   rotateY(millis() / 4000);
   strokeWeight(0.3);
-  ellipsoid(100, 100, 100);
+  ellipsoid(height/2, height/2, height/2);
 }
