@@ -1,31 +1,34 @@
 let video;
 let handPose;
-let hands;
+let mao;
 let vg = 57;
 let vgs = 0;
 
-function modelReady() {
-  console.log("hand pose loaded");
+
+function fazFuncionar() {
+ // console.log("hand pose loaded");
   handpose.on("predict", gotPose);
 }
 
-function mousePressed() {
-  console.log(hands);
-}
+//se detetar:
+  //function mousePressed() {
+    //console.log(mao);
+  //}
 
 function gotPose(results) {
-  hands = results;
+  mao = results;
 }
 
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   video = createCapture(VIDEO);
   video.hide();
-  handpose = ml5.handpose(video, modelReady);
+  handpose = ml5.handpose(video, fazFuncionar);
 }
 
 function draw() {
-  if (hands && hands.length > 0) {
+//a transição entre tons suave
+  if (mao && mao.length > 0) {
     if (vg < 200) vg+=2;
     if (vgs < 255) vgs+=2;
   } else {
