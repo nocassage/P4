@@ -36,6 +36,6 @@ function draw() {
   fill(88, vg, 59);
   stroke(0, 0, vgs);
   rotateY(millis() / 4000);
-  strokeWeight(0.3);
+  strokeWeight(1);
   ellipsoid(height/4, height/4, height/4);
 }
